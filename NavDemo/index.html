@@ -1,0 +1,73 @@
+<!doctype html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<title>Better Medicine</title>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		
+		<style media="screen" type="text/css">
+			html, body{
+				margin: 0 auto;
+				padding: 0;
+			}
+			#container{
+				margin: auto;
+				width: 1200px;
+			}
+			ul { list-style-type:none; }
+			img
+			{
+				position:absolute;
+				top:0px;
+				z-index:-1;
+			}
+			.hide{
+				visibility: hidden;
+			}
+			.show{
+				visibility: visible;
+			}
+		</style>
+
+		<script type="text/javascript" src="http://www.google.com/jsapi?key=ABQIAAAARFKFRzFbjPYbUgzSrdVg0hRrrNc1sGQv42gDojQ1Ll8KWy8MgRRQv_0u-KVSwjYfghDs3QJR40ZHtA"></script>
+		<script type="text/javascript">
+			google.load("jquery", "1.5.1");
+		</script>
+		
+		<script language="javascript">
+			$().ready(function(){
+				var count = 0;
+				var liCount = $("li").length;
+
+				$("#container").click(function(){
+					count++;
+					//alert(count);
+					for(x=count; x<liCount; x++){
+						var plusOne = count + 1;
+						$("#" + count).removeClass("show").addClass("hide");
+						$("#" + plusOne).removeClass("hide").addClass("show");
+					}
+				});
+				
+				$("#6").click(function(){
+					window.location = "http://staging.mm-health.com/";
+				});
+				
+			});
+		</script>
+		
+	</head>
+
+	<body>
+		<div id="container">
+			<ul>
+				<li id="1" class="show"><img src="images/NavMenu_Main_032011.jpg" /></li>
+				<li id="2" class="hide"><img src="images/NavMenu_Conditions_032011.jpg" /></li>
+				<li id="3" class="hide"><img src="images/NavMenu_Symptoms_032011.jpg" /></li>
+				<li id="4" class="hide"><img src="images/NavMenu_DrugsTreatments_032011.jpg" /></li>
+				<li id="5" class="hide"><img src="images/NavMenu_HealthyLiving_032011.jpg" /></li>
+				<li id="6" class="hide"><img src="images/NavMenu_SymptomChecker_032011.jpg" /></li>
+			</ul>
+		</div>
+	</body>
+
+</html>
